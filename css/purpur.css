@@ -1,5 +1,5 @@
 div, span, ul, li, h1, h2, h3, h4, h5, h6, td, th {padding:0;margin:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-family: 'Raleway', sans-serif;font-weight: 400;color: rgba(128,0,128,0.8);}
-body {background:url(../img/bg.png);background-size:contain;color:#800080;width:100%;font-family: 'Raleway', sans-serif;font-size: 12pt;letter-spacing: 0.2px;line-height:normal;min-width:800px;border-top:2px solid #800080;}
+body {background:url(../img/bg.png);background-size:contain;color:#800080;width:100%;font-family: 'Raleway', sans-serif;font-size: 12pt;letter-spacing: 0.2px;line-height:normal;min-width:700px;border-top:2px solid #800080;}
 a { color:inherit; text-decoration:underline; }
 a:hover { color:#800080; text-decoration: none; }
 h1,h2,h3 { position:relative; clear:both; margin-bottom:1em; font-family:'Raleway', sans-serif; font-weight:400; color:#800080; text-align:center; -webkit-text-stroke: 1px rgba(128,0,128,0.4); }
@@ -187,7 +187,7 @@ abbr[data-hint] {
     line-height: normal;
 }
 #footer {width:100%;line-height: 48px;text-align:center;font-size: 8pt;text-transform:uppercase;color:rgba(128,0,128,0.5);}
-#content {position:relative;overflow:auto;min-width: 740px;width:84%;max-width:1600px;min-height: 600px;margin:0 auto 0 auto;padding: 3em 4em;border-radius:28px;background-color:#F6F2F6;background-color: rgba(255,255,255,0.6);overflow-x:hidden;}
+#content {position:relative;overflow:auto;min-width: 740px;width:84%;max-width:1600px;min-height: 600px;margin:0 auto 0 auto;padding: 3em 2em;border-radius:28px;background-color:#F6F2F6;background-color: rgba(255,255,255,0.6);overflow-x:hidden;}
 
 .margin-small { margin:5px; }
 .padding-small { padding:5px; }
@@ -209,26 +209,28 @@ abbr[data-hint] {
     .top-padding-mobile { padding-top: 0; }
 }
 
-.inpage-navigation { width:100%; margin:0 auto 0 auto; text-align:center; }
+.inpage-navigation { width:60%; margin:0 auto 0 auto; text-align:center; }
 .inpage-navigation a { font-size:9pt; display:inline-block; margin-bottom:0.25em; padding:6px 8px; text-transform:uppercase; border-radius:10px; border:1px solid rgba(128,0,128,0.1); text-decoration:none; background:rgba(255,255,255,0.6); }
 .inpage-navigation a:hover { background:rgba(255,255,255,1); border:1px solid rgba(128,0,128,0.2); }
 
 .inline {display: inline-block;}
 .block { float:none; display:table; margin-bottom:20px; background:rgba(255,255,255,0.6); width:100%; height:300px; max-height:300px; border-radius:10px; text-align:left; vertical-align:top; }
-.block * { text-align:left; vertical-align:top; }
+.block * {text-align:left;vertical-align:top;}
 .block h2,h3 {margin: -8px -32px 0px -26px;padding:0;padding-left:15px;background:rgba(128,0,128,0.1);font-weight:500;}
 .block .left.text h2:first-child,.block .left.text h3:first-child {border-top-left-radius:10px;margin-left: -24px;}
 .block .right.text h2:first-child, .block .right.text h3:first-child { border-top-right-radius:10px; }
-.block .left {float:none;display:table-cell;overflow: hidden;}
-.block .right {float:none;display:table-cell;overflow: hidden;}
-.block .picture {width: 230px;text-align: left;}
-.block .picture img {height: 100%;}
+.block .left {float:none;display: table-cell;overflow: hidden;text-align: left;}
+.block .right {float:none;display:table-cell;overflow: hidden;text-align: right;border-radius: 0 10px 10px 0;}
+.block .picture {width: 210px;max-height: 310px;}
+.block .picture img {height:100%;}
 .block .text {width:auto;padding: 8px 32px 8px 24px;}
 .block .text p { padding-bottom: 4px; }
 .block .text p:last-child { padding-bottom: 0; margin-bottom: 0; }
 .block .text p.text-align-left { text-align:left; }
-.block .left.picture img {max-width:none;border-radius:10px 0 0 10px;}
-.block .right.picture img { max-width:none; border-radius:0 10px 10px 0; }
+.block .left.picture {border-radius: 10px 0 0 0;}
+.block .left.picture img {max-width:none;border-radius: 10px 0 0 0;}
+.block .right.picture {border-radius: 0 10px 10px 0;}
+.block .right.picture img {max-width:none;display: inline;border-radius: 0 10px 10px 0;}
 
 /***********************************************************************************************************************
 ** TREATMENTS **********************************************************************************************************
@@ -309,7 +311,9 @@ h1#rabatte { margin-top:2.2em; }
 }
 
 @media (min-width: 1200px) {
-    .inpage-navigation { display:none; }
+    .inpage-navigation { display:none; width:100%; }
+
+    #content { padding: 3em; }
 
     #group-1 { display:table; margin-top: -2.3em; }
     #group-1-1, #group-1-2 { display:table-cell; width:50%; }
@@ -322,6 +326,11 @@ h1#rabatte { margin-top:2.2em; }
     #group-2-1 {padding-right: 1em;}
     #group-2-2 {padding-left: 1em;}
     #group-2 h1 { margin-bottom:0.2em; }
+
+    .block .left.picture { border-radius: 10px 0 0 10px; max-height:none; height:100%; }
+    .block .left.picture img { border-radius: 10px 0 0 10px; }
+    .block .right.picture { border-radius: 0 10px 10px 0; max-height:none; height:100%; }
+    .block .right.picture img { border-radius: 0 10px 10px 0; }
 }
 
 
@@ -330,6 +339,8 @@ h1#rabatte { margin-top:2.2em; }
 ***********************************************************************************************************************/
 #portrait h2 {font-weight: 500;padding: 8px 24px;}
 #portrait .block { width:100%; height:300px; max-height:300px; border-radius:10px; text-align:left; vertical-align:top; }
+#portrait .block .picture { max-width:200px; }
+#portrait .block .picture img { width:100%; height:auto;}
 .timetable {background: rgba(128,0,128,0.05);border-radius: 10px;white-space: nowrap;line-height: 22px;top: -21px;position: relative;}
 .timetable thead { background:rgba(128,0,128,0.1);  }
 .timetable thead th { font-weight:500; }
@@ -338,6 +349,11 @@ h1#rabatte { margin-top:2.2em; }
 .timetable tr:first-child td { padding-top: 16px;}
 .timetable tr:last-child td { padding-bottom: 16px;}
 
+@media (min-width: 1200px) {
+    #portrait .block .picture {max-width:220px;}
+    #portrait .block .picture img { width:auto; height:100%; }
+}
+
 /***********************************************************************************************************************
 ** PRODUCTS ************************************************************************************************************
 ***********************************************************************************************************************/
@@ -345,6 +361,8 @@ h1#rabatte { margin-top:2.2em; }
 #products .middle.selection img {width: auto;height:33.333%;}
 #products .block { position:relative; }
 #products .block .price {position:absolute;top:0;right:0;padding: inherit;width:75px;height: 100%;text-align:center;font-weight:inherit;border-left:1px solid white;}
+#products .block .picture { max-width:200px; }
+#products .block .picture img { width:100%; height:auto;}
 .block .middle { float:none; display:table-cell; }
 .block .selection { width:100px; padding-left:1px; }
 .block .selection img { opacity:1; margin-bottom:1px; cursor:pointer; }
@@ -352,15 +370,27 @@ h1#rabatte { margin-top:2.2em; }
 .block .selection img:hover { opacity:0.8; }
 .product-logo { display:block; clear:both; margin-left:auto; margin-right:auto; height:50px; opacity:0.8; }
 
+@media (min-width: 1200px) {
+    #products .block .picture { max-width:none; }
+    #products .block .picture img { width:auto; height:100%; }
+}
+
 /***********************************************************************************************************************
 ** CONTACT ************************************************************************************************************
 ***********************************************************************************************************************/
 
 #contact address { text-align:center; }
 #contact h2 {font-weight: 500;padding: 8px 24px;}
+#contact .block .picture { max-width:200px; }
+#contact .block .picture img { width:100%; height:auto;}
 #social {font-size:27px;text-align:center;text-shadow:none;margin: 32px 0 24px 0;}
 #social .socicon { margin: 0 12px; }
 .google { width:100%; height:320px; border-spacing:0; margin-bottom:2em; }
+
+@media (min-width: 1200px) {
+    #contact .block .picture { max-width:310px; }
+    #contact .block .picture img { width:auto; height:100%; }
+}
 
 /***********************************************************************************************************************
 ** LINKS ***************************************************************************************************************
