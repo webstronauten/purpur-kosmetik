@@ -1,0 +1,5 @@
+body { background:white; }
+#content { background:white; }
+.header { background:rgba(115,0,171,0.2) !important;  }
+.footer { background:rgba(115,0,171,0.2) !important;  }
+ul.list { background:rgba(115,0,171,0.05) !important; }

@@ -1,0 +1,169 @@
+<div id="voucher">
+    <form id="voucherForm">
+        <p>
+            Ich bestelle einen Gutschein
+            <br/>für eine Behandlung oder ein Produkt
+            <br/>im Wert von CHF
+        </p>
+
+        <div class="boxes top-margin-middle bottom-margin-middle">
+            <label for="amount300">
+                <input type="radio" name="predefinedAmounts" id="amount300" value="300" checked />
+                <div class="rounded-box">300.-</div>
+            </label>
+            <label for="amount200">
+                <input type="radio" name="predefinedAmounts" id="amount200" value="200"/>
+                <div class="rounded-box">200.-</div>
+            </label>
+            <label for="amount150">
+                <input type="radio" name="predefinedAmounts" id="amount150" value="150"/>
+                <div class="rounded-box">150.-</div>
+            </label>
+            <label for="amount100">
+                <input type="radio" name="predefinedAmounts" id="amount100" value="100"/>
+                <div class="rounded-box">100.-</div>
+            </label>
+            <label for="amount50">
+                <input type="radio" name="predefinedAmounts" id="amount50" value="50"/>
+                <div class="rounded-box">50.-</div>
+            </label>
+            <input type="text" id="manualAmount" placeholder="?" />
+        </div>
+
+        <div class="flex-row">
+            <div>
+                <p class="bottom-margin-small">Gutschein</p>
+                <p class="small bottom-margin">Diese Angaben erscheinen <br/>1 zu 1 auf dem Gutschein</p>
+
+                <input type="text" class="input-xlarge" id="voucherReceiver"
+                       placeholder="Für wen" required />
+
+                <input type="text" class="input-xlarge" id="voucherSender"
+                       placeholder="Von wem" required />
+
+                <input type="text" class="input-xlarge" id="voucherOccasion"
+                       placeholder="Zu welchem Anlass" required />
+
+                <div class="top-margin">
+                    <label class="inline small">Zustellung per</label>
+                    <label class="radio inline" for="voucherPerEmail">
+                        <input type="radio" name="voucherChannel" id="voucherPerEmail" value="E-Mail" checked> E-Mail
+                    </label>
+                    <label class="radio inline" for="voucherPerMail">
+                        <input type="radio" name="voucherChannel" id="voucherPerMail" value="Post"> Post
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <p class="bottom-margin-small">Rechnungsadresse</p>
+                <p class="small bottom-margin">Bitte geben Sie Ihre <br/>vollständigen Daten an</p>
+
+                <input type="text" class="input-xlarge" id="buyerFullName"
+                       placeholder="Vorname / Name" required />
+
+                <input type="text" class="input-xlarge" id="buyerStreet"
+                       placeholder="Adresse" required />
+
+                <input type="text" class="input-xlarge" id="buyerZipCity"
+                       placeholder="PLZ / Ort" required />
+
+                <input type="email" class="input-xlarge" id="buyerEmail"
+                       placeholder="E-Mail" required />
+            </div>
+        </div>
+
+        <div class="top-margin-middle">
+            <p class="small bottom-margin">
+                Sie erhalten direkt nach der Bestellung eine
+                <br/>Bestätigungs-Mail mit den Zahlungsangaben
+            </p>
+            <input type="submit" class="btn btn-large" value="Gutschein bestellen"/>
+        </div>
+    </form>
+</div>
+
+
+
+<script>
+    $(document).ready(function() {
+        var $predefinedAmounts = $("input[type='radio'][name='predefinedAmounts']"),
+            $manualAmount = $("#manualAmount");
+
+        $predefinedAmounts.change(function() {
+            //Reset manual amount
+            $manualAmount.val(null);
+        });
+
+        $manualAmount.change(function() {
+            //Reset all predefined amounts
+            $predefinedAmounts.prop("checked", false);
+
+            if($(this).val() === "")
+                $predefinedAmounts.first().prop("checked", true);
+        });
+
+        var $form = $("form#voucherForm");
+        $form.submit(function(event) {
+            event.preventDefault();
+
+            var isFormValid = $form.validate();
+            if(isFormValid) {
+                var formData = {
+                    voucherAmount: $("#manualAmount").val() || $("input[name='predefinedAmounts']:checked").val(),
+                    voucherReceiver: $("#voucherReceiver").val(),
+                    voucherSender: $("#voucherSender").val(),
+                    voucherOccasion: $("#voucherOccasion").val(),
+                    voucherChannel: $("input[name='voucherChannel']:checked").val(),
+                    buyerFullName: $("#buyerFullName").val(),
+                    buyerStreet: $("#buyerStreet").val(),
+                    buyerZipCity: $("#buyerZipCity").val(),
+                    buyerEmail: $("#buyerEmail").val()
+                };
+
+                if(confirm("Klicken Sie auf OK, wenn Sie den Gutschein im Wert von CHF " + formData.voucherAmount + " bestellen möchten.")) {
+                    var $submitButton = $form.find("input[type='submit']");
+                    $submitButton
+                        .prop("disabled", true)
+                        .val($submitButton.val() + "...");
+
+                    emailjs.send("default_service", "voucher_request", formData)
+                        .then(function() {
+                            $submitButton
+                                .prop("disabled", false)
+                                .val($submitButton.val().replace("...", ""));
+
+                            alert("Herzlichen Dank für Ihre Bestellung!\n\nSie erhalten in Kürze eine Bestätigung per E-Mail.");
+                            scrollToTop();
+                            window.location.href = "#behandlungen";
+                        }, function(err) {
+                            $submitButton
+                                .prop("disabled", false)
+                                .val($submitButton.val().replace("...", ""));
+
+                            alert("Technischer Fehler. " +
+                                "Die Bestellung konnte nicht erfolgreich versendet werden. " +
+                                "Bitte versuchen Sie es erneut.");
+                        });
+                }
+            }
+
+            return false;
+        });
+
+
+        $form.on("submit", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            var isFormValid = $form.validate();
+            if(isFormValid) {
+                var formData = {
+                    voucherAmount: '',
+                    voucherReceiver: '',
+                    voucherSender: ''
+                }
+            }
+        });
+    });
+</script>
