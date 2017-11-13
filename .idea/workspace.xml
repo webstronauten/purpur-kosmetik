@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6615e93f-c691-490f-8619-83355cc7a697" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portrait.html" afterPath="$PROJECT_DIR$/portrait.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,21 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="purpur.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="purpur.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/purpur.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
               <caret line="369" column="81" lean-forward="true" selection-start-line="369" selection-start-column="81" selection-end-line="369" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="portrait.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/portrait.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="100" column="98" lean-forward="true" selection-start-line="100" selection-start-column="98" selection-end-line="100" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -187,12 +176,12 @@
       <workItem from="1510394059549" duration="445000" />
       <workItem from="1510394973660" duration="25716000" />
       <workItem from="1510555082674" duration="4095000" />
-      <workItem from="1510563716951" duration="59000" />
+      <workItem from="1510563716951" duration="523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38239000" />
+    <option name="totallyTimeSpent" value="38703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
@@ -378,18 +367,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/purpur.css">
+    <entry file="file://$PROJECT_DIR$/portrait.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="369" column="81" lean-forward="true" selection-start-line="369" selection-start-column="81" selection-end-line="369" selection-end-column="81" />
+        <state relative-caret-position="336">
+          <caret line="79" column="40" lean-forward="true" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portrait.html">
+    <entry file="file://$PROJECT_DIR$/css/purpur.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="100" column="98" lean-forward="true" selection-start-line="100" selection-start-column="98" selection-end-line="100" selection-end-column="98" />
+        <state relative-caret-position="384">
+          <caret line="369" column="81" lean-forward="true" selection-start-line="369" selection-start-column="81" selection-end-line="369" selection-end-column="81" />
           <folding />
         </state>
       </provider>
