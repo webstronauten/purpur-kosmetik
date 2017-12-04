@@ -112,16 +112,16 @@ input[type="color"]:focus,
 }
 
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: rgba(128,0,128,0.6);
+    color: rgba(128,0,128,0.7);
 }
 input::-moz-placeholder { /* Firefox 19+ */
-    color: rgba(128,0,128,0.6);
-}
-input:-ms-input-placeholder { /* IE 10+ */
-    color: rgba(128,0,128,0.6);
+    color: rgba(128,0,128,0.9);
 }
 input:-moz-placeholder { /* Firefox 18- */
-    color: rgba(128,0,128,0.6);
+    color: rgba(128,0,128,0.9);
+}
+input:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(128,0,128,0.9);
 }
 
 .btn.btn-large {
