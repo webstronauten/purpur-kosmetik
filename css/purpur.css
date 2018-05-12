@@ -1229,3 +1229,7 @@ img.link {
 #imprintPrivacyPolicy {
   text-align: center;
 }
+
+#imprintPrivacyPolicy ul li {
+  background: none;
+}
