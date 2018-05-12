@@ -444,7 +444,9 @@ abbr[data-hint] {
 }
 #footer {
   width: 100%;
-  line-height: 48px;
+  margin-top: 12px;
+  min-height: 48px;
+  line-height: 12pt;
   text-align: center;
   font-size: 8pt;
   text-transform: uppercase;
@@ -1225,5 +1227,5 @@ img.link {
 }
 
 #imprintPrivacyPolicy {
-  text-align: left;
+  text-align: center;
 }
