@@ -683,6 +683,9 @@ h3 {
   text-align: center;
   vertical-align: top;
 }
+.treatment .header .col-3-double {
+  width: 144px;
+}
 .treatment .header .col-3.borderless {
   border: none;
 }
