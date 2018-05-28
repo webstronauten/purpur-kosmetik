@@ -811,6 +811,9 @@ h3 {
 .small {
   font-size: 10pt;
 }
+.smaller {
+  font-size: 9pt;
+}
 
 /*#discounts .treatment { float:left; width:32%; margin-left:0.5%; margin-right:0.5%; }*/
 #discounts .treatment .header td {
