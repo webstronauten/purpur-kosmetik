@@ -535,7 +535,7 @@ abbr[data-hint] {
 }
 
 .inpage-navigation {
-  width: 60%;
+  width: 100%;
   margin: 0 auto 0 auto;
   text-align: center;
 }
