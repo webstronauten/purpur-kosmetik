@@ -25,11 +25,17 @@ body {
   color: #800080;
   width: 100%;
   font-family: "Raleway", sans-serif;
-  font-size: 12pt;
   letter-spacing: 0.2px;
   line-height: normal;
   min-width: 700px;
   border-top: 2px solid #800080;
+
+  font-size: 14pt;
+}
+@media (min-width: 600px) {
+  body {
+    font-size: 12pt;
+  }
 }
 a {
   color: inherit;
